@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const NavMainRoute = () => {
   return (
     <>
-      <nav>
+      <header>
         <div className="navigation">
           <div className="nav-title">
             <h1>#VANLIFE</h1>
@@ -13,7 +13,7 @@ const NavMainRoute = () => {
             <Link to="/vans">Vans</Link>
           </div>
         </div>
-      </nav>
+      </header>
     </>
   );
 };
