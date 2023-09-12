@@ -81,10 +81,11 @@ header {
   margin-bottom: 2.2em;
 }
 
-.menu-find > .link {
+.menu-find > .link,
+.current-van > .link {
   color: #fff;
   background-color: #ff8c38;
-  margin-bottom: 2.3em;
+  margin-bottom: 3em;
 }
 
 /* LINKS */
@@ -153,11 +154,16 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1em;
+  margin-bottom: 2.5em;
 }
 
 .van-item {
   height: 340px;
   width: 250px;
+}
+
+.van-item a {
+  text-decoration: none;
 }
 
 .van-img img {
@@ -173,6 +179,7 @@ header {
   font-size: 1.25rem;
   font-weight: bold;
   color: #161616;
+  height: 50px;
 }
 
 .name,
@@ -187,10 +194,61 @@ header {
   font-weight: 400;
 }
 
-.link-type a {
+i {
+  font-style: normal;
+  text-transform: capitalize;
+}
+
+.link-option {
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 0.35em;
+  padding: 0.5em 1em;
+  margin-top: 0;
   text-decoration: none;
+}
+
+.luxury {
   background: #000;
   color: white;
+}
+
+.rugged {
+  background: #115e59;
+  color: white;
+}
+
+.simple {
+  background: #e17654;
+  color: white;
+}
+
+/* CURRENT VAN */
+
+.current-van {
+  padding: 0 1em;
+}
+
+.current-img {
+  height: 490px;
+  width: 100%;
+  border-radius: 0.35em;
+  margin-bottom: 2em;
+}
+
+.current-van h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.current-price {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.current-description {
+  line-height: 1.5;
+  margin-bottom: 2em;
 }
 
 /* footer */

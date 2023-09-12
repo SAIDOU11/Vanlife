@@ -13,21 +13,22 @@ const VansList = () => {
   }, []);
 
   const elementsVansList = vans.map((van) => {
-    console.log(van);
     return (
       <div key={van.id} className="van-item">
-        <div className="van-img">
-          <img src={van.imageUrl} alt="" />
-        </div>
-        <div className="name-price">
-          <p className="name">{van.name}</p>
-          <p className="price">
-            ${van.price} <br /> <span className="day-price">/day</span>
-          </p>
-        </div>
-        <div className="link-type ">
-          <Link to="">{van.type}</Link>
-        </div>
+        <Link id={van.id} to={`/vans/${van.id} `}>
+          <div className="van-img">
+            <img src={van.imageUrl} />
+          </div>
+          <div className="name-price">
+            <p className="name">{van.name}</p>
+            <p className="price">
+              ${van.price} <br /> <span className="day-price">/day</span>{' '}
+            </p>
+          </div>
+          <div className="link-type">
+            <i className={`link-option ${van.type} `}>{van.type}</i>
+          </div>
+        </Link>
       </div>
     );
   });
@@ -35,7 +36,7 @@ const VansList = () => {
   return (
     <div className="vans-list">
       <h1>Explore our van options</h1>
-      {elementsVansList}{' '}
+      {elementsVansList}
     </div>
   );
 };
