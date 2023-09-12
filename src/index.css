@@ -8,14 +8,14 @@ body {
   padding: 0;
   font-family: 'Inter', sans-serif;
   max-width: 550px;
-  height: 100vh;
+  /* height: 100vh; */
+  background: #fff7ed;
 }
 
 /* HEADER */
 
 header {
   text-decoration: none;
-  background: #fff7ed;
   height: 150px;
   padding: 0 1em;
 }
@@ -143,6 +143,54 @@ header {
 .link-explore {
   background: #000;
   color: #fff;
+}
+
+/* VANS LIST */
+
+.vans-list {
+  padding: 0 1em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.van-item {
+  height: 340px;
+  width: 250px;
+}
+
+.van-img img {
+  border-radius: 0.3em;
+  width: 100%;
+  height: 250px;
+}
+
+.name-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #161616;
+}
+
+.name,
+.price {
+  margin-top: 0.25em;
+}
+
+.day-price {
+  display: flex;
+  justify-content: end;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.link-type a {
+  text-decoration: none;
+  background: #000;
+  color: white;
 }
 
 /* footer */
