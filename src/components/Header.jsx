@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const NavMainRoute = () => {
+const Header = () => {
   return (
     <>
       <header>
@@ -9,6 +9,7 @@ const NavMainRoute = () => {
             <h1>#VANLIFE</h1>
           </div>
           <div className="nav-links">
+            <Link to="/host">Host</Link>
             <Link to="/about">About</Link>
             <Link to="/vans">Vans</Link>
           </div>
@@ -18,4 +19,4 @@ const NavMainRoute = () => {
   );
 };
 
-export default NavMainRoute;
+export default Header;

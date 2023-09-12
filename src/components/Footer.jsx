@@ -1,4 +1,4 @@
-const FooterMainRoute = () => {
+const Footer = () => {
   return (
     <footer>
       <div className="footer">
@@ -8,4 +8,4 @@ const FooterMainRoute = () => {
   );
 };
 
-export default FooterMainRoute;
+export default Footer;
