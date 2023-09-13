@@ -263,6 +263,7 @@ i {
 /* HOST LAYOUT */
 
 .host-layout {
+  padding: 0 1em;
   display: flex;
   flex-direction: row;
 }
@@ -279,6 +280,54 @@ i {
   color: black;
   font-weight: 700;
   text-decoration: underline;
+}
+
+/* HOST VANS LIST */
+
+.heading-list {
+  padding: 0 1em;
+}
+
+.listVans {
+  margin: 3em 0;
+  padding: 0 1em;
+}
+
+.host-van-item {
+  padding: 0 1em;
+  margin-bottom: 1.2em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100px;
+}
+
+.host-van-img img {
+  height: 66px;
+  width: 66px;
+  border-radius: 0.3em;
+}
+
+.host-name-price {
+  margin-left: 1em;
+}
+
+.host-name,
+.host-price {
+  margin: 0.3em 0;
+}
+
+.host-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #161616;
+}
+
+.host-price {
+  color: #4d4d4d;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 /* footer */
