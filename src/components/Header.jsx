@@ -1,6 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
+  const styleCurrentNav = {
+    fontWeight: 'bold',
+    textDecoration: 'underline',
+    color: '#161616',
+  };
+
   return (
     <>
       <header>
@@ -11,9 +17,24 @@ const Header = () => {
             </Link>
           </div>
           <div className="nav-links">
-            <Link to="/host">Host</Link>
-            <Link to="/about">About</Link>
-            <Link to="/vans">Vans</Link>
+            <NavLink
+              to="/host"
+              style={({ isActive }) => (isActive ? styleCurrentNav : null)}
+            >
+              Host
+            </NavLink>
+            <NavLink
+              to="/about"
+              style={({ isActive }) => (isActive ? styleCurrentNav : null)}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/vans"
+              style={({ isActive }) => (isActive ? styleCurrentNav : null)}
+            >
+              Vans
+            </NavLink>
           </div>
         </div>
       </header>
