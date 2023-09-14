@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import HostVanLayout from '../../components/HostVanLayout.jsx';
 
 const HostVanDetail = () => {
   const { id } = useParams();
@@ -41,8 +40,6 @@ const HostVanDetail = () => {
             </p>
           </div>
         </div>
-        <HostVanLayout />
-        <Outlet context={{ currentVan }} />
       </div>
     </section>
   );
