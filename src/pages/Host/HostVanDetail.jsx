@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Outlet } from 'react-router-dom';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
+import HostVanLayout from '../../components/HostVanLayout.jsx';
 
 const HostVanDetail = () => {
   const { id } = useParams();
@@ -19,7 +21,10 @@ const HostVanDetail = () => {
   }
 
   return (
-    <>
+    <section>
+      <Link className="back-to-vans" to=".." relative="path">
+        <AiOutlineArrowLeft /> <span>Back to all vans</span>
+      </Link>
       <div className="van-detail">
         <div className="detail-picture-name">
           <div className="picture">
@@ -36,8 +41,10 @@ const HostVanDetail = () => {
             </p>
           </div>
         </div>
+        <Outlet />
+        <HostVanLayout />
       </div>
-    </>
+    </section>
   );
 };
 
