@@ -283,7 +283,9 @@ i {
 }
 
 /* HOST VANS LIST */
-
+.host-van-link {
+  text-decoration: none;
+}
 .heading-list {
   padding: 0 1em;
 }
@@ -328,6 +330,54 @@ i {
   color: #4d4d4d;
   font-weight: 500;
   font-size: 1rem;
+}
+
+/* VAN DETAILS */
+
+.van-detail {
+  margin: 2em 0;
+  background-color: #fff;
+  padding: 1em;
+  height: 500px;
+}
+
+.detail-picture-name {
+  height: 160px;
+  display: flex;
+  flex-direction: row;
+}
+
+.picture img {
+  height: 160px;
+  width: 160px;
+  margin-right: 1em;
+}
+
+.detail-name {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+
+.detail-name h4 {
+  margin: 0.5em 0;
+  font-size: 1.6rem;
+  color: #161616;
+}
+
+.detail-name p {
+  margin-top: 0;
+}
+
+.current-name-price {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.current-name-price span {
+  font-weight: 500;
+  font-size: 1.05rem;
 }
 
 /* footer */

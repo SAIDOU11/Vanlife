@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const HostVans = () => {
   const [vans, setVans] = useState([]);
@@ -15,22 +16,31 @@ const HostVans = () => {
   const vanListed = vans.map((van) => {
     console.log(van);
     return (
-      <div className="host-van-item">
-        <div key={van.id} className="host-van-img">
-          <img src={van.imageUrl} alt={van.name} />
-        </div>
-        <div className="host-name-price">
-          <p className="host-name">{van.name}</p>
-          <p className="host-price">${van.price}/day</p>
-        </div>
-      </div>
+      <Link key={van.id} className="host-van-link" to={`/host/vans/${van.id}`}>
+        {' '}
+        <div key={van.id} className="host-van-item">
+          <div className="host-van-img">
+            <img src={van.imageUrl} alt={van.name} />
+          </div>
+          <div className="host-name-price">
+            <p className="host-name">{van.name}</p>
+            <p className="host-price">${van.price}/day</p>
+          </div>
+        </div>{' '}
+      </Link>
     );
   });
 
   return (
     <>
       <h1 className="heading-list">Your listed vans </h1>
-      <div className="listVans">{vanListed.length > 0 ? vanListed : null}</div>
+      <div className="listVans">
+        {vanListed.length > 0 ? (
+          <section>{vanListed}</section>
+        ) : (
+          <h2>Loading...</h2>
+        )}
+      </div>
     </>
   );
 };
