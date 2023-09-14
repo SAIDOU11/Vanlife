@@ -8,7 +8,7 @@ body {
   padding: 0;
   font-family: 'Inter', sans-serif;
   max-width: 550px;
-  /* height: 100vh; */
+  height: 100vh;
   background: #fff7ed;
 }
 
