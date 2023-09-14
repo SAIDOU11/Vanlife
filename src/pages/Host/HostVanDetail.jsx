@@ -41,7 +41,6 @@ const HostVanDetail = () => {
             </p>
           </div>
         </div>
-        <Outlet />
         <HostVanLayout />
       </div>
     </section>

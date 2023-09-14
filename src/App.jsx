@@ -10,7 +10,7 @@ import Income from './pages/Host/Income.jsx';
 import HostVans from './pages/Host/HostVans.jsx';
 import HostVanDetail from './pages/Host/HostVanDetail.jsx';
 import Reviews from './pages/Host/Reviews.jsx';
-import HostVanLayout from './components/HostVanLayout.jsx';
+
 import './server.jsx';
 
 const App = () => {
