@@ -415,11 +415,22 @@ i {
   font-weight: 700;
   text-decoration: underline;
 }
+
+.van-info {
+  margin-top: 0.8em;
+}
+
 .van-info-type {
   text-transform: capitalize;
 }
-.van-info span {
+.van-info p {
   font-weight: bold;
+  line-height: 1.5;
+}
+
+.van-info span {
+  font-weight: normal;
+  margin-left: 0.2em;
 }
 
 .host-van-photo img {
