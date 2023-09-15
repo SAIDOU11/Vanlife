@@ -5,13 +5,13 @@ import HostVanLayout from '../../components/HostVanLayout.jsx';
 
 const HostVanDetail = () => {
   const { id } = useParams();
+
   const [currentVan, setCurrentVan] = useState(null);
 
   useEffect(() => {
     fetch(`/api/host/vans/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.vans);
         setCurrentVan(data.vans);
       });
   }, []);

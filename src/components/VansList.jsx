@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import VanTypeFilter from './VanTypeFilter.jsx';
 
 const VansList = () => {
   const [vans, setVans] = useState([]);
@@ -34,10 +35,11 @@ const VansList = () => {
   });
 
   return (
-    <div className="vans-list">
+    <>
       <h1>Explore our van options</h1>
-      {elementsVansList}
-    </div>
+      <VanTypeFilter />
+      <div className="vans-list"> {elementsVansList}</div>
+    </>
   );
 };
 
