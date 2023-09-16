@@ -22,7 +22,7 @@ const VansList = () => {
   const elementsVansList = displayVans.map((van) => {
     return (
       <div key={van.id} className="van-item">
-        <Link id={van.id} to={`/vans/${van.id} `}>
+        <Link id={van.id} to={van.id}>
           <div className="van-img">
             <img src={van.imageUrl} />
           </div>
@@ -40,20 +40,59 @@ const VansList = () => {
     );
   });
 
+  const handleClickFilter = (key, value) => {
+    setSearchParams((prevParams) => {
+      if (value === null) {
+        prevParams.delete(key);
+      } else {
+        prevParams.set(key, value);
+      }
+      return prevParams;
+    });
+  };
+
   return (
     <>
       <h1>Explore our van options</h1>
       <div className="van-type-filter">
-        <button className=" type-simple type-link type link-option">
+        <button
+          onClick={() => handleClickFilter('type', 'simple')}
+          className={
+            typeFilter === 'simple'
+              ? `simple link-option`
+              : `type-simple type-link type link-option`
+          }
+        >
           Simple
         </button>
-        <button className="type-luxury type-link type link-option">
+        <button
+          onClick={() => handleClickFilter('type', 'luxury')}
+          className={
+            typeFilter === 'luxury'
+              ? 'luxury link-option'
+              : 'type-luxury type-link type link-option'
+          }
+        >
           Luxury
         </button>
-        <button className="type-rugged type-link type link-option">
+        <button
+          onClick={() => handleClickFilter('type', 'rugged')}
+          className={
+            typeFilter === 'rugged'
+              ? 'rugged link-option'
+              : 'type-rugged type-link type link-option'
+          }
+        >
           Rugged
         </button>
-        <button className="clear type-link">Clear filters</button>
+        {typeFilter ? (
+          <button
+            onClick={() => handleClickFilter('type', null)}
+            className="clear type-link"
+          >
+            Clear filters
+          </button>
+        ) : null}
       </div>
       <div className="vans-list"> {elementsVansList}</div>
     </>
