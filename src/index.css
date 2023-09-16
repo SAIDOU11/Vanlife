@@ -209,7 +209,7 @@ i {
 }
 
 .link-option {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   border-radius: 0.35em;
   padding: 0.5em 1em;
@@ -479,10 +479,32 @@ i {
   border-radius: 0.3em;
 }
 
+.type-link {
+  cursor: pointer;
+  border: none;
+}
+
+.type-simple:hover {
+  background-color: #e17654;
+  color: white;
+}
+
+.type-luxury:hover {
+  background-color: #000;
+  color: white;
+}
+
+.type-rugged:hover {
+  background-color: #115e59;
+  color: white;
+}
+
 .clear {
+  font-size: 1.1rem;
   text-decoration: underline;
   margin-left: 5em;
   color: #4d4d4d;
+  background-color: transparent;
 }
 
 /* footer */
