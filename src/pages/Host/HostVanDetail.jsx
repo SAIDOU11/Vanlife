@@ -22,7 +22,7 @@ const HostVanDetail = () => {
 
   return (
     <section>
-      <Link className="back-to-vans" to=".." path="relative">
+      <Link className="back-to-vans" to=".." relative="path">
         <AiOutlineArrowLeft /> <span>Back to all vans</span>
       </Link>
       <div className="van-detail">

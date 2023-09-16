@@ -336,7 +336,7 @@ i {
 
 /* VAN DETAILS */
 .back-to-vans {
-  margin-top: 1em;
+  margin: 1em 0;
   padding: 0 1em;
   display: flex;
   align-items: center;
@@ -348,6 +348,7 @@ i {
   margin-left: 0.5em;
   text-decoration: underline;
   color: black;
+  color: #858585;
 }
 
 .van-detail {

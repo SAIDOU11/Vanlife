@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const CurrentVanDetail = () => {
   const params = useParams();
@@ -16,7 +17,9 @@ const CurrentVanDetail = () => {
 
   return (
     <>
-      {' '}
+      <Link className="back-to-vans" to=".." relative="path">
+        <AiOutlineArrowLeft /> <span>Back to all vans</span>
+      </Link>
       {van ? (
         <div className="current-van">
           <img className="current-img" src={van.imageUrl} alt="" />
@@ -31,7 +34,7 @@ const CurrentVanDetail = () => {
         </div>
       ) : (
         <h2>Loading...</h2>
-      )}{' '}
+      )}
     </>
   );
 };
