@@ -22,7 +22,7 @@ const VansList = () => {
   const elementsVansList = displayVans.map((van) => {
     return (
       <div key={van.id} className="van-item">
-        <Link id={van.id} to={van.id}>
+        <Link to={van.id}>
           <div className="van-img">
             <img src={van.imageUrl} />
           </div>

@@ -10,7 +10,6 @@ const CurrentVanDetail = () => {
     fetch(`/api/vans/${params.id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.vans);
         setVan(data.vans);
       });
   }, [params.id]);
@@ -22,7 +21,7 @@ const CurrentVanDetail = () => {
       </Link>
       {van ? (
         <div className="current-van">
-          <img className="current-img" src={van.imageUrl} alt="" />
+          <img className="current-img" src={van.imageUrl} alt={van.name} />
           <i className={`link-option ${van.type}`}>{van.type}</i>
           <h2>{van.name}</h2>
           <h3>
