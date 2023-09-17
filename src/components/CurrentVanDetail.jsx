@@ -1,10 +1,12 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
 const CurrentVanDetail = () => {
   const params = useParams();
   const [van, setVan] = useState(null);
+  const location = useLocation();
+  console.log(location);
 
   useEffect(() => {
     fetch(`/api/vans/${params.id}`)
@@ -16,8 +18,17 @@ const CurrentVanDetail = () => {
 
   return (
     <>
-      <Link className="back-to-vans" to=".." relative="path">
-        <AiOutlineArrowLeft /> <span>Back to all vans</span>
+      <Link
+        className="back-to-vans"
+        to={location ? `../?${location.state.params}` : '..'}
+        relative="path"
+      >
+        <AiOutlineArrowLeft />{' '}
+        <span>
+          {location.state.type === null
+            ? 'Back to all vans'
+            : `Back to ${location.state.type} vans`}
+        </span>
       </Link>
       {van ? (
         <div className="current-van">

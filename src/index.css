@@ -510,6 +510,19 @@ i {
   background-color: transparent;
 }
 
+.not-found {
+  padding: 0 1em;
+}
+
+.not-found h1 {
+  font-size: 2rem;
+}
+
+.return {
+  padding: 1em 0;
+  margin: 3em 0 6em;
+}
+
 /* footer */
 
 footer {

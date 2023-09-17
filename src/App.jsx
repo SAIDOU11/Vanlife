@@ -13,7 +13,7 @@ import HostVanInfo from './pages/Host/HostVanInfo.jsx';
 import HostVanPricing from './pages/Host/HostVanPricing.jsx';
 import HostVanPhotos from './pages/Host/HostVanPhotos.jsx';
 import Reviews from './pages/Host/Reviews.jsx';
-
+import NotFound from './components/NotFound.jsx';
 import './server.jsx';
 
 const App = () => {
@@ -36,6 +36,7 @@ const App = () => {
               <Route path="photos" element={<HostVanPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />{' '}
         </Route>
       </Routes>
     </BrowserRouter>
