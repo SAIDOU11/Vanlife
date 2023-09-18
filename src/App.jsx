@@ -14,6 +14,7 @@ import HostVanPricing from './pages/Host/HostVanPricing.jsx';
 import HostVanPhotos from './pages/Host/HostVanPhotos.jsx';
 import Reviews from './pages/Host/Reviews.jsx';
 import NotFound from './components/NotFound.jsx';
+import Login from './components/Login.jsx';
 import './server.jsx';
 
 const App = () => {
@@ -24,7 +25,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
-          <Route path="vans/:id" element={<VanDetail />} />{' '}
+          <Route path="vans/:id" element={<VanDetail />} />
+          <Route path="login" element={<Login />} />
           <Route path="/host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />{' '}

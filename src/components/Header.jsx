@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import icon from '../assets/avatar-icon.png';
 
 const Header = () => {
   const styleCurrentNav = {
@@ -34,6 +35,9 @@ const Header = () => {
               style={({ isActive }) => (isActive ? styleCurrentNav : null)}
             >
               Vans
+            </NavLink>
+            <NavLink className="nav-link-icon" to="/login">
+              <img src={icon} />
             </NavLink>
           </div>
         </div>

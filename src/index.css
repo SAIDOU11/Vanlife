@@ -43,6 +43,11 @@ header {
   justify-content: space-between;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links > a {
   font-size: 1rem;
   color: #4d4d4d;
@@ -54,6 +59,12 @@ header {
   text-decoration: underline;
   color: black;
   font-weight: 700;
+}
+
+.nav-link-icon img {
+  display: flex;
+  align-items: center;
+  height: 22px;
 }
 
 /* HOME PAGE MENU */
@@ -523,6 +534,46 @@ i {
   margin: 3em 0 6em;
 }
 
+/* PAGE LOGIN */
+
+.login-container {
+  padding: 0 1em;
+  text-align: center;
+}
+
+.login-container h1 {
+  font-size: 2rem;
+}
+
+.login-container form {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.login-container input {
+  border-radius: 0.2em;
+  padding: 1em;
+  border: 0.5px solid lightgray;
+}
+
+.login-container input::placeholder {
+  color: #4d4d4d;
+}
+
+.login-container button {
+  margin: 2em 0 3em;
+  background-color: #ff8c38;
+  color: white;
+  font-weight: 700;
+  padding: 1.3em;
+}
+
+.orange {
+  color: #ff8c38;
+}
+
 /* footer */
 
 footer {
@@ -533,5 +584,5 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
+  margin-top: 3em;
 }
