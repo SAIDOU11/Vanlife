@@ -539,6 +539,7 @@ i {
 .login-container {
   padding: 0 1em;
   text-align: center;
+  margin-bottom: 3em;
 }
 
 .login-container h1 {
@@ -584,5 +585,5 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3em;
+  margin-top: auto;
 }
