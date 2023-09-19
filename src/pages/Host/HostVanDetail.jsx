@@ -2,18 +2,28 @@ import { useState, useEffect } from 'react';
 import { useParams, Link, Outlet } from 'react-router-dom';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import HostVanLayout from '../../components/HostVanLayout.jsx';
+import { getHostVans } from '../../Api.jsx';
 
 const HostVanDetail = () => {
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
+  const [currentVan, setCurrentVan] = useState(null);
   const { id } = useParams();
 
-  const [currentVan, setCurrentVan] = useState(null);
-
   useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setCurrentVan(data.vans);
-      });
+    const loadVans = async () => {
+      setLoading(true);
+      try {
+        const data = await getHostVans(id);
+        setCurrentVan(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    setCurrentVan(data.vans);
   }, []);
 
   if (!currentVan) {

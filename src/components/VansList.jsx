@@ -1,8 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams, useLocation } from 'react-router-dom';
-import { GetHostVans } from '../Api.jsx';
+import {
+  Link,
+  useParams,
+  useLocation,
+  useSearchParams,
+} from 'react-router-dom';
+import { getHostVans } from '../Api.jsx';
 
 const VansList = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [vans, setVans] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -15,7 +21,7 @@ const VansList = () => {
     const loadVans = async () => {
       setLoading(true);
       try {
-        const data = await GetHostVans();
+        const data = await getHostVans();
         setVans(data);
       } catch (err) {
         setError(err);
