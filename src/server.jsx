@@ -1,8 +1,9 @@
-import { createServer, Model } from 'miragejs';
+import { createServer, Model, Response } from 'miragejs';
 
 createServer({
   models: {
     vans: Model,
+    users: Model,
   },
 
   seeds(server) {
@@ -71,6 +72,12 @@ createServer({
         'https://assets.scrimba.com/advanced-react/react-router/green-wonder.png',
       type: 'rugged',
       hostId: '123',
+    });
+    server.create('user', {
+      id: '123',
+      email: 'b@b.com',
+      password: 'p123',
+      name: 'Bob',
     });
   },
 

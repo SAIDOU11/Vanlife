@@ -575,6 +575,10 @@ i {
   color: #ff8c38;
 }
 
+.login-error {
+  color: red;
+}
+
 /* footer */
 
 footer {

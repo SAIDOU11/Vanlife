@@ -1,7 +1,7 @@
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
-import { GetVans } from '../Api.jsx';
+import { getVans } from '../Api.jsx';
 
 const CurrentVanDetail = () => {
   const { id } = useParams();
@@ -15,8 +15,8 @@ const CurrentVanDetail = () => {
     const loadVans = async () => {
       setLoading(true);
       try {
-        const data = await GetVans(id);
-        setVan(data.vans);
+        const data = await getVans(id);
+        setVan(data);
       } catch (err) {
         setError(err);
       } finally {
@@ -44,7 +44,7 @@ const CurrentVanDetail = () => {
         <span>
           {location.state.type === null
             ? 'Back to all vans'
-            : `Back to ${location.state.type} vans`}
+            : `Back to ${type} vans`}
         </span>
       </Link>
       {van && (

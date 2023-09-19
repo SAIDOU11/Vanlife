@@ -2,7 +2,7 @@ const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(() => resolve(), ms));
 };
 
-const GetVans = async () => {
+const getVans = async () => {
   const url = id ? `/api/vans/${id}` : '/api/vans';
 
   const res = await fetch(url);
@@ -49,4 +49,4 @@ const loginUser = async (creds) => {
   return data;
 };
 
-export { GetVans, loginUser, getHostVans };
+export { getVans, loginUser, getHostVans };
