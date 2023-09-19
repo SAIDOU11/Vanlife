@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
-import GetVans from '../Api.jsx';
+import { Link, useParams, useLocation } from 'react-router-dom';
+import { GetHostVans } from '../Api.jsx';
 
 const VansList = () => {
   const [vans, setVans] = useState([]);
-  const [searchParams, setSearchParams] = useSearchParams();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const { id } = useParams();
+  const location = useLocation();
 
   const typeFilter = searchParams.get('type');
 
@@ -14,7 +15,7 @@ const VansList = () => {
     const loadVans = async () => {
       setLoading(true);
       try {
-        const data = await GetVans();
+        const data = await GetHostVans();
         setVans(data);
       } catch (err) {
         setError(err);
@@ -23,7 +24,7 @@ const VansList = () => {
       }
     };
     loadVans();
-  }, []);
+  }, [id]);
 
   const displayVans = typeFilter
     ? vans.filter((van) => van.type === typeFilter)
