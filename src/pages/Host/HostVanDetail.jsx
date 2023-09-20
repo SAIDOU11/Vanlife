@@ -5,8 +5,8 @@ import HostVanLayout from '../../components/HostVanLayout.jsx';
 import { getHostVans } from '../../Api.jsx';
 
 const HostVanDetail = () => {
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [currentVan, setCurrentVan] = useState(null);
   const { id } = useParams();
 
@@ -22,8 +22,7 @@ const HostVanDetail = () => {
         setLoading(false);
       }
     };
-
-    setCurrentVan(data.vans);
+    loadVans();
   }, []);
 
   if (!currentVan) {

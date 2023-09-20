@@ -8,6 +8,10 @@ const Header = () => {
     color: '#161616',
   };
 
+  const fakeLogOut = () => {
+    localStorage.removeItem('loggedin');
+  };
+
   return (
     <>
       <header>
@@ -39,6 +43,7 @@ const Header = () => {
             <NavLink className="nav-link-icon" to="/login">
               <img src={icon} />
             </NavLink>
+            <button onClick={fakeLogOut}>X</button>
           </div>
         </div>
       </header>

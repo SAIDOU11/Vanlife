@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { loginUser } from '../Api.jsx';
 
 const Login = () => {
@@ -7,13 +7,27 @@ const Login = () => {
     email: '',
     password: '',
   });
+  const [status, setStatus] = useState('idle');
+  const [error, setError] = useState(null);
 
-  const location = useLocation();
-  console.log(location);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    loginUser(loginFormData).then((data) => console.log(data));
+    setStatus('submitting');
+    loginUser(loginFormData)
+      .then((data) => {
+        console.log(data);
+        setError(null);
+        localStorage.setItem('loggedin', true);
+        navigate('/host', { replace: true });
+      })
+      .catch((err) => {
+        setError(err);
+      })
+      .finally(() => {
+        setStatus('idle');
+      });
   };
 
   const handleChange = (e) => {
@@ -31,6 +45,8 @@ const Login = () => {
         <h2 className="login-error">{location.state.message}</h2>
       )}
 
+      {error?.message && <h2 className="login-error">{error.message}</h2>}
+
       <form onSubmit={handleSubmit}>
         <input
           onChange={handleChange}
@@ -46,7 +62,9 @@ const Login = () => {
           placeholder="Password"
           value={loginFormData.password}
         />{' '}
-        <button className="link-lg link">Log in</button>
+        <button disabled={status === 'submitting'} className="link-lg link">
+          {status === 'submitting' ? 'Logging in' : 'Log in'}
+        </button>
       </form>
 
       <p>

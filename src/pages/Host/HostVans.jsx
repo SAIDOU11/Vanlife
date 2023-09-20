@@ -4,8 +4,8 @@ import { getHostVans } from '../../Api.jsx';
 
 const HostVans = () => {
   const [vans, setVans] = useState([]);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const loadVans = async () => {
@@ -20,7 +20,7 @@ const HostVans = () => {
       }
     };
     loadVans();
-  }, [id]);
+  }, []);
 
   const vanListed = vans.map((van) => {
     return (
