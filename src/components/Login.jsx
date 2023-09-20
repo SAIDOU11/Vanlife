@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { loginUser } from '../Api.jsx';
 
 const Login = () => {
@@ -11,16 +11,17 @@ const Login = () => {
   const [error, setError] = useState(null);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const lastPath = location.state?.path || '/host';
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('submitting');
     loginUser(loginFormData)
       .then((data) => {
-        console.log(data);
         setError(null);
         localStorage.setItem('loggedin', true);
-        navigate('/host', { replace: true });
+        navigate(lastPath, { replace: true });
       })
       .catch((err) => {
         setError(err);

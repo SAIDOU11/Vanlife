@@ -9,7 +9,6 @@ const CurrentVanDetail = () => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
   const location = useLocation();
-  console.log(location);
 
   useEffect(() => {
     const loadVans = async () => {
